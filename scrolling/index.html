@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#071126">
+	<title>Moonlit Passage</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="animation.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js" defer></script>
+	<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js" defer></script>
+	<script src="chess-online.js" defer></script>
+</head>
+<body>
+	<main class="sequence" aria-label="A continuous moonlit camera passage">
+		<div class="stage" id="stage">
+			<div class="world" aria-hidden="true">
+				<div class="image-plane first-plane" id="first-plane">
+					<img src="firstpcrop.png" alt="" id="first-image" fetchpriority="high">
+				</div>
+				<div class="image-plane second-plane" id="second-plane">
+					<img src="seccrop.png" alt="" id="second-image" loading="eager">
+				</div>
+				<div class="image-plane third-plane" id="third-plane">
+					<img src="thirdcrop.png" alt="" id="third-image" loading="eager">
+				</div>
+				<div class="image-plane fourth-plane" id="fourth-plane">
+					<img src="fourthcrop.png" alt="" id="fourth-image" loading="eager">
+				</div>
+				<div class="atmosphere"></div>
+				<div class="grain"></div>
+				<div class="snow-layer" id="snow-layer" aria-hidden="true"></div>
+			</div>
+		</div>
+		<div class="overlay-content">
+			<section class="login-card" aria-labelledby="login-title">
+				<div class="login-brand">
+					<span class="brand-monogram" aria-hidden="true">
+						<svg viewBox="0 0 24 24" focusable="false">
+							<path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5Z" fill="#d69a5e" stroke="#f1c58c" stroke-linejoin="round" stroke-width="1.2"/>
+							<circle cx="8" cy="10" r="1.1" fill="#563322"/>
+							<circle cx="13" cy="15" r="1.15" fill="#563322"/>
+							<circle cx="8" cy="16" r="0.9" fill="#563322"/>
+							<circle cx="12" cy="7.5" r="0.85" fill="#563322"/>
+						</svg>
+					</span>
+					<span class="brand-name">Cookie Studio<small>ZEESHAN'S ACCESS</small></span>
+				</div>
+				<p class="login-kicker">404's ACCESS</p>
+				<h1 id="login-title" class="secheadline">login to zeeshan's page</h1>
+					<form id="login-form">
+					<label class="login-field">
+						<span>Email address</span>
+						<input type="email" name="email" autocomplete="username" placeholder="you@example.com" required>
+					</label>
+					<label class="login-field">
+						<span>Password</span>
+						<span class="password-control">
+							<input id="login-password" type="password" name="password" autocomplete="current-password" placeholder="Enter your password" required>
+							<button class="password-toggle" id="password-toggle" type="button" aria-label="Show password" title="Show password">
+								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+							</button>
+						</span>
+					</label>
+					<label class="remember-option"><input type="checkbox" name="remember"> <span>Stay signed in</span></label>
+					<button class="sign-in-button" type="submit">Sign in <span aria-hidden="true">→</span></button>
+					<p class="login-feedback" id="login-feedback" role="status" aria-live="polite" hidden></p>
+				</form>
+			</section>
+		</div>
+		
+
+		<div class="content-pillar" aria-label="Additional navigation and aptitude content">
+			<nav class="mini-nav" aria-label="Sub navigation">
+				<a href="#" class="active">AK</a>
+				<a href="#">AK</a>
+				<a href="#">AK</a>
+			</nav>
+
+			<section class="aptitude-panel">
+				<div class="panel-intro">
+					<p class="panel-kicker">Aptitudes</p>
+					<h2>Just scroll and enjoy the animation with the effects in motion.</h2>
+				</div>
+				<div class="aptitude-grid">
+					<article class="aptitude-card flow" role="button" tabindex="0" aria-pressed="false">
+						<div class="aptitude-icon" aria-hidden="true">
+							<svg viewBox="0 0 64 64" role="img" aria-label="Chocolate chip cookie">
+								<defs>
+									<radialGradient id="cookie-dough" cx="32%" cy="25%" r="76%"><stop stop-color="#f8d18a"/><stop offset="0.58" stop-color="#d9954d"/><stop offset="1" stop-color="#9d5127"/></radialGradient>
+									<linearGradient id="cookie-edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe2a8"/><stop offset="1" stop-color="#9b4c25"/></linearGradient>
+								</defs>
+								<path d="M39 8c-1.6 5.2 2.2 9.6 8.5 9.8-2.6 5.5.4 10.3 8.1 10.8A23.5 23.5 0 1 1 39 8Z" fill="url(#cookie-dough)" stroke="url(#cookie-edge)" stroke-width="2.4"/>
+								<path d="M17 22c5-7 15-10 23-7" fill="none" stroke="#fff0c8" stroke-linecap="round" stroke-opacity=".55" stroke-width="2.2"/>
+								<g fill="#593221"><ellipse cx="24" cy="24" rx="3.1" ry="2.3" transform="rotate(-24 24 24)"/><ellipse cx="39" cy="33" rx="3.3" ry="2.5" transform="rotate(28 39 33)"/><ellipse cx="25" cy="42" rx="2.8" ry="2.2" transform="rotate(18 25 42)"/><circle cx="33" cy="17" r="1.9"/><circle cx="17" cy="34" r="1.7"/></g>
+								<g fill="#a66a3c" opacity=".56"><circle cx="33" cy="28" r="1"/><circle cx="18" cy="29" r=".9"/><circle cx="33" cy="47" r="1"/></g>
+							</svg>
+						</div>
+						<h3>Zeeshan</h3>
+						<progress></progress><p>Hey, this is zeeshan the front end editor with more animation skills and vfx and web designing.</p>
+					</article>
+					<article class="aptitude-card motion" role="button" tabindex="0" aria-pressed="false">
+						<div class="aptitude-icon" aria-hidden="true">
+							<svg viewBox="0 0 64 64" role="img" aria-label="Fresh strawberry">
+								<defs>
+									<linearGradient id="berry-skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff8b79"/><stop offset=".46" stop-color="#e53e4d"/><stop offset="1" stop-color="#a51632"/></linearGradient>
+									<linearGradient id="berry-leaf" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9fcd72"/><stop offset="1" stop-color="#397744"/></linearGradient>
+								</defs>
+								<path d="M11 24c0-8 9-13 17-7l4 3 4-3c8-6 17-1 17 7 0 12-13 25-21 33C24 49 11 36 11 24Z" fill="url(#berry-skin)" stroke="#ffb29b" stroke-width="1.5"/>
+								<path d="M31 20c-5-5-11-5-15-2 5 0 8 2 10 6-5-2-9-1-12 2 6-1 11 0 15 2 4-3 9-5 16-4-4-4-8-5-13-3 2-4 6-6 11-7-6-2-11 0-15 4Z" fill="url(#berry-leaf)" stroke="#37683b" stroke-linejoin="round" stroke-width="1"/>
+								<g fill="#ffe5a1"><ellipse cx="21" cy="27" rx="1.1" ry="2" transform="rotate(-22 21 27)"/><ellipse cx="31" cy="29" rx="1.1" ry="2"/><ellipse cx="41" cy="27" rx="1.1" ry="2" transform="rotate(22 41 27)"/><ellipse cx="25" cy="37" rx="1.1" ry="2" transform="rotate(-14 25 37)"/><ellipse cx="36" cy="38" rx="1.1" ry="2" transform="rotate(14 36 38)"/><ellipse cx="31" cy="46" rx="1" ry="1.8"/></g>
+								<path d="M18 22c2-3 5-4 8-3" fill="none" stroke="#ffd2ba" stroke-linecap="round" stroke-opacity=".8" stroke-width="2"/>
+							</svg>
+						</div>
+						<h3>Farhan</h3>
+					<progress></progress><p>Hey, this is farhan the back end expert and helps in front end too either for coding in the website's.</p>
+					</article>
+					<article class="aptitude-card systems" role="button" tabindex="0" aria-pressed="false">
+						<div class="aptitude-icon" aria-hidden="true">
+							<svg viewBox="0 0 64 64" role="img" aria-label="Golden aloo tikki potato patty">
+								<defs>
+									<radialGradient id="tikki-crust" cx="36%" cy="27%" r="78%"><stop stop-color="#ffe6a4"/><stop offset=".42" stop-color="#eeb957"/><stop offset=".78" stop-color="#bd702f"/><stop offset="1" stop-color="#814323"/></radialGradient>
+									<linearGradient id="tikki-side" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a65c2b"/><stop offset="1" stop-color="#65351f"/></linearGradient>
+								</defs>
+								<ellipse cx="32" cy="39" rx="24" ry="16" fill="url(#tikki-side)"/>
+								<path d="M8 32c1-11 10-19 23-20 13-1 23 6 25 17 2 10-7 18-22 19-14 2-27-5-26-16Z" fill="url(#tikki-crust)" stroke="#f8d58a" stroke-width="1.5"/>
+								<path d="M16 29c5-7 12-10 20-9" fill="none" stroke="#fff1c7" stroke-linecap="round" stroke-opacity=".72" stroke-width="2.4"/>
+								<g fill="#7b4225" opacity=".78"><circle cx="21" cy="35" r="1.7"/><circle cx="34" cy="27" r="1.4"/><circle cx="43" cy="36" r="1.8"/><circle cx="29" cy="41" r="1.3"/><circle cx="48" cy="29" r="1"/></g>
+								<g fill="#547b3f"><path d="m25 30 1.4-2 1.4 2-1.4 2Z"/><path d="m37 38 1.4-2 1.4 2-1.4 2Z"/><path d="m18 39 1.2-1.8 1.2 1.8-1.2 1.8Z"/></g>
+							</svg>
+						</div>
+						<h3>star boy </h3>
+						<progress></progress><p>Creates structured systems that keep design language, UX, and product thinking in sync.</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="brand-links-panel" aria-label="Quick links">
+				<div class="link-shell">
+					<h2 class="link-box-heading">App Links </h2>
+					<div class="link-track">
+						<a href="https://www.google.com" target="_blank" rel="noreferrer" class="brand-link google"><span class="brand-mark">G</span><span>Google</span></a>
+						<a href="https://www.amazon.in" target="_blank" rel="noreferrer" class="brand-link amazon"><span class="brand-mark">A</span><span>Amazon</span></a>
+						<a href="https://www.flipkart.com" target="_blank" rel="noreferrer" class="brand-link flipkart"><span class="brand-mark">F</span><span>Flipkart</span></a>
+						<a href="https://www.myntra.com" target="_blank" rel="noreferrer" class="brand-link myntra"><span class="brand-mark">M</span><span>Myntra</span></a>
+						<a href="https://www.netflix.com" target="_blank" rel="noreferrer" class="brand-link netflix"><span class="brand-mark">N</span><span>Netflix</span></a>
+						<a href="https://www.youtube.com/@zylfine" target="_blank" rel="noreferrer" class="brand-link youtube"><span class="brand-mark">Y</span><span>@zylfine</span></a>
+						<a href="https://github.com" target="_blank" rel="noreferrer" class="brand-link github"><span class="brand-mark">GH</span><span>GitHub</span></a>
+						<a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="brand-link instagram"><span class="brand-mark">IG</span><span>Instagram</span></a>
+						<a href="https://telegram.org/" target="_blank" rel="noreferrer" class="brand-link telegram"><span class="brand-mark">TG</span><span>Telegram</span></a>
+						<a href="https://www.google.com" target="_blank" rel="noreferrer" class="brand-link google"><span class="brand-mark">G</span><span>Google</span></a>
+						<a href="https://www.amazon.in" target="_blank" rel="noreferrer" class="brand-link amazon"><span class="brand-mark">A</span><span>Amazon</span></a>
+						<a href="https://www.flipkart.com" target="_blank" rel="noreferrer" class="brand-link flipkart"><span class="brand-mark">F</span><span>Flipkart</span></a>
+						<a href="https://www.myntra.com" target="_blank" rel="noreferrer" class="brand-link myntra"><span class="brand-mark">M</span><span>Myntra</span></a>
+						<a href="https://www.netflix.com" target="_blank" rel="noreferrer" class="brand-link netflix"><span class="brand-mark">N</span><span>Netflix</span></a>
+						<a href="https://www.youtube.com/@ZESHU_JOD" target="_blank" rel="noreferrer" class="brand-link youtube"><span class="brand-mark">Y</span><span>@ZESHU_JOD</span></a>
+						<a href="https://github.com" target="_blank" rel="noreferrer" class="brand-link github"><span class="brand-mark">GH</span><span>GitHub</span></a>
+						<a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="brand-link instagram"><span class="brand-mark">IG</span><span>Instagram</span></a>
+						<a href="https://telegram.org/" target="_blank" rel="noreferrer" class="brand-link telegram"><span class="brand-mark">TG</span><span>Telegram</span></a>
+					</div>
+					<div class="link-track reverse-track">
+						<a href="https://www.google.com" target="_blank" rel="noreferrer" class="brand-link google"><span class="brand-mark">G</span><span>Google</span></a>
+						<a href="https://www.amazon.in" target="_blank" rel="noreferrer" class="brand-link amazon"><span class="brand-mark">A</span><span>Amazon</span></a>
+						<a href="https://www.flipkart.com" target="_blank" rel="noreferrer" class="brand-link flipkart"><span class="brand-mark">F</span><span>Flipkart</span></a>
+						<a href="https://www.myntra.com" target="_blank" rel="noreferrer" codwclass="brand-link myntra"><span class="brand-mark">M</span><span>Myntra</span></a>
+						<a href="https://www.netflix.com" target="_blank" rel="noreferrer" class="brand-link netflix"><span class="brand-mark">N</span><span>Netflix</span></a>
+						<a href="https://www.youtube.com/@zylfine" target="_blank" rel="noreferrer" class="brand-link youtube"><span class="brand-mark">Y</span><span>@zylfine</span></a>
+						<a href="https://github.com" target="_blank" rel="noreferrer" class="brand-link github"><span class="brand-mark">GH</span><span>GitHub</span></a>
+						<a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="brand-link instagram"><span class="brand-mark">IG</span><span>Instagram</span></a>
+						<a href="https://telegram.org/" target="_blank" rel="noreferrer" class="brand-link telegram"><span class="brand-mark">TG</span><span>Telegram</span></a>
+						<a href="https://www.google.com" target="_blank" rel="noreferrer" class="brand-link google"><span class="brand-mark">G</span><span>Google</span></a>
+						<a href="https://www.amazon.in" target="_blank" rel="noreferrer" class="brand-link amazon"><span class="brand-mark">A</span><span>Amazon</span></a>
+						<a href="https://www.flipkart.com" target="_blank" rel="noreferrer" class="brand-link flipkart"><span class="brand-mark">F</span><span>Flipkart</span></a>
+						<a href="https://www.myntra.com" target="_blank" rel="noreferrer" class="brand-link myntra"><span class="brand-mark">M</span><span>Myntra</span></a>
+						<a href="https://www.netflix.com" target="_blank" rel="noreferrer" class="brand-link netflix"><span class="brand-mark">N</span><span>Netflix</span></a>
+						<a href="https://www.youtube.com/@ZESHU_JOD" target="_blank" rel="noreferrer" class="brand-link youtube"><span class="brand-mark">Y</span><span>@ZESHU_JOD</span></a>
+						<a href="https://github.com" target="_blank" rel="noreferrer" class="brand-link github"><span class="brand-mark">GH</span><span>GitHub</span></a>
+						<a href="https://www.instagram.com/" target="_blank" rel="noreferrer" class="brand-link instagram"><span class="brand-mark">IG</span><span>Instagram</span></a>
+						<a href="https://telegram.org/" target="_blank" rel="noreferrer" class="brand-link telegram"><span class="brand-mark">TG</span><span>Telegram</span></a>
+					</div>
+				</div>
+				<h2 class="youtube-links-heading">YouTube channels</h2>
+				<svg class="youtube-channel-connectors" viewBox="0 0 700 120" preserveAspectRatio="none" aria-hidden="true">
+					<path d="M350 0 V24 H188 V104 M350 24 H512 V104 M180 94 L188 105 L196 94 M504 94 L512 105 L520 94" />
+				</svg>
+				<div class="youtube-channel-links" aria-label="YouTube channels">
+					<a href="https://www.youtube.com/@zylfine" target="_blank" rel="noreferrer"><span class="youtube-channel-mark" aria-hidden="true">farhan</span>@zylfine</a>
+					<a href="https://www.youtube.com/@ZESHU_JOD" target="_blank" rel="noreferrer"><span class="youtube-channel-mark" aria-hidden="true">cookie</span>@ZESHU_JOD</a>
+				</div>
+			</section>
+
+			<section class="game-hub" aria-label="More games">
+				<div class="game-hub-header">
+					<p class="panel-kicker">More games</p>
+					<h2>Quick picks</h2>
+				</div>
+
+				<div class="game-grid">
+					<button class="game-card chess-launch" id="chess-launch" type="button" aria-expanded="false" aria-controls="chess-room">
+						<span class="game-icon">♔</span>
+						<strong>Chess</strong>
+						<small>Open the online game</small>
+					</button>
+					<div class="chess-heading">
+						<p class="panel-kicker">Play together</p>
+						<h2 id="chess-title">Online chess</h2>
+					</div>
+					<div class="chess-layout">
+						<div class="chess-board" id="chess-board" role="grid" aria-label="Chess board"></div>
+						<div class="chess-controls">
+							<p class="chess-status" id="chess-status" role="status" aria-live="polite">Create a room or join a friend's invite.</p>
+							<button class="chess-action" id="chess-create" type="button">Create invite</button>
+							<label class="chess-room-label" for="chess-room-input">Invite link or room ID</label>
+							<input class="chess-room-input" id="chess-room-input" type="text" autocomplete="off" placeholder="Paste invite link or room ID">
+							<button class="chess-action chess-action-secondary" id="chess-join" type="button">Join room</button>
+							<button class="chess-action chess-action-secondary" id="chess-copy" type="button" hidden>Copy invite</button>
+						</div>
+					</div>
+			
+
+			<section class="game-panel" id="checkers-room" hidden>
+				<div class="game-panel-header">
+					<p class="panel-kicker">Checkers</p>
+					<h3>Board battle room</h3>
+				</div>
+				<div class="game-panel-box">
+					<label for="checkers-room-code">Access code</label>
+					<input id="checkers-room-code" type="text" value="CHK-303" readonly>
+					<button class="chess-action" type="button">Create host</button>
+					<button class="chess-action chess-action-secondary" type="button">Join with code</button>
+				</div>
+			</section>
+
+			<section class="game-panel" id="ludo-room" hidden>
+				<div class="game-panel-header">
+					<p class="panel-kicker">Ludo</p>
+					<h3>Host a room</h3>
+				</div>
+				<div class="game-panel-box">
+					<label for="ludo-room-code">Access code</label>
+					<input id="ludo-room-code" type="text" value="LUDO-2048" readonly>
+					<button class="chess-action" type="button">Create host</button>
+					<button class="chess-action chess-action-secondary" type="button">Join with code</button>
+				</div>
+			</section>
+
+			<section class="game-panel" id="business-room" hidden>
+				<div class="game-panel-header">
+					<p class="panel-kicker">Business</p>
+					<h3>Private access room</h3>
+				</div>
+				<div class="game-panel-box">
+					<label for="business-room-code">Access code</label>
+					<input id="business-room-code" type="text" value="BIZ-7781" readonly>
+					<button class="chess-action" type="button">Create host</button>
+					<button class="chess-action chess-action-secondary" type="button">Join with code</button>
+				</div>
+			</section>
+
+			<section class="game-panel" id="puzzle-room" hidden>
+				<div class="game-panel-header">
+					<p class="panel-kicker">Puzzle</p>
+					<h3>Quick challenge room</h3>
+				</div>
+				<div class="game-panel-box">
+					<label for="puzzle-room-code">Access code</label>
+					<input id="puzzle-room-code" type="text" value="PUZ-505" readonly>
+					<button class="chess-action" type="button">Create host</button>
+					<button class="chess-action chess-action-secondary" type="button">Join with code</button>
+				</div>
+			</section>
+
+		</div>
+	</main>
+</body>
+</html>	
